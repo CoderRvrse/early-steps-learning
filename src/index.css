@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── BRAND COLORS ─── */
+:root {
+  --color-primary:   #0077CC;
+  --color-secondary: #FFB400;
+  --color-dark:      #333333;
+  --color-light:     #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ─── CUSTOM OVERRIDES ─── */
+.hero-gradient {
+  background: linear-gradient(135deg, rgba(0,119,204,0.1) 0%, #ffffff 100%);
+}
+
+.service-card:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+}
+
+.btn-primary {
+  @apply bg-[var(--color-primary)] text-[var(--color-light)] transition-all duration-200 ease-in-out;
+}
+.btn-primary:hover {
+  @apply bg-[var(--color-primary)/90];
+}
+
+.btn-secondary {
+  @apply bg-[var(--color-secondary)] text-[var(--color-dark)] transition-all duration-200 ease-in-out;
+}
+.btn-secondary:hover {
+  @apply bg-[var(--color-secondary)/90];
+}
+
+/* ─── RESET & BASIC LAYOUT ─── */
+* {
+  @apply box-border m-0 p-0;
+}
+body {
+  @apply font-sans leading-relaxed text-[var(--color-dark)] bg-[var(--color-light)] p-4;
+}
+header {
+  @apply text-center py-8;
+}
+header .logo {
+  @apply max-w-[120px] mb-4;
+}
+header h1 {
+  @apply text-2xl text-[var(--color-primary)];
+}
+.tagline {
+  @apply italic mt-2 text-[var(--color-dark)];
+}
+section {
+  @apply py-8 border-t border-gray-200;
+}
+section h2 {
+  @apply text-xl mb-2;
+}
+ul {
+  @apply list-disc list-inside;
+}
+.btn {
+  @apply inline-block bg-[var(--color-primary)]
+         text-[var(--color-light)] px-5 py-3
+         rounded-lg no-underline mt-4;
+}
+footer {
+  @apply text-center py-6 border-t border-gray-200;
+}
