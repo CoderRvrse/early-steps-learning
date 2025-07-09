@@ -2,9 +2,11 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  root:       '.',       // serve & build from here
-  publicDir:  'public',  // your assets folder
+  root:       '.',            // unchanged
+  base:       '/early-steps-learning/',  
+  publicDir:  'public',       // unchanged
   build: {
-    outDir: '../dist',   // optional: change if you want a different build folder
-  }
+    outDir:     'docs',        // already set
+    emptyOutDir:true,
+  },
 })
