@@ -2,11 +2,12 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  root:       '.',            // unchanged
-  base:       '/early-steps-learning/',  
-  publicDir:  'public',       // unchanged
+  // ① The sub-folder your site will live in on GH Pages:
+  base: '/early-steps-learning/',
+
+  // ② Where to spit out the built files:
   build: {
-    outDir:     'docs',        // already set
-    emptyOutDir:true,
-  },
+    outDir: 'docs',        // <-- GitHub Pages will serve docs/
+    emptyOutDir: true      // <-- clear out docs/ before each build
+  }
 })
