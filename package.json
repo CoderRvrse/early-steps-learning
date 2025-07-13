@@ -1,0 +1,17 @@
+{
+  "name": "early-steps-ui-fresh",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.23",
+    "tailwindcss": "^3.3.2",
+    "vite": "^4.5.14"
+  }
+}

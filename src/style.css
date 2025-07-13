@@ -1,0 +1,121 @@
+/* 1) Tailwind’s core layers */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── 2) Base resets & global styles ─── */
+@layer base {
+  :root {
+    /* Font & rendering */
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Color palette */
+    --color-primary:   #0077CC;
+    --color-secondary: #FFB400;
+    --color-dark:      #333333;
+    --color-light:     #FFFFFF;
+
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+  }
+
+  a {
+    @apply font-medium text-[var(--color-primary)] no-underline;
+  }
+  a:hover {
+    @apply text-[var(--color-primary)/90];
+  }
+
+  /* Removed flex centering here so header can stick */
+  body {
+    @apply m-0 min-w-[320px] min-h-screen;
+  }
+
+  h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+  }
+
+  #app {
+    @apply max-w-7xl mx-auto p-8 text-center;
+  }
+
+  .card {
+    @apply p-8;
+  }
+
+  .read-the-docs {
+    @apply text-gray-500;
+  }
+
+  button {
+    @apply rounded-lg border border-transparent
+           px-6 py-2 text-base font-medium
+           bg-[#1a1a1a] cursor-pointer
+           transition-colors duration-200 ease-in-out;
+  }
+  button:hover {
+    @apply border-[var(--color-primary)];
+  }
+  button:focus,
+  button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+
+  /* Light‑mode overrides */
+  @media (prefers-color-scheme: light) {
+    :root {
+      color: #213547;
+      background-color: #ffffff;
+    }
+    a:hover {
+      @apply text-[#747bff];
+    }
+    button {
+      @apply bg-[#f9f9f9];
+    }
+  }
+}
+
+/* ─── 3) Logo component with drop‑shadow ─── */
+@layer components {
+  .logo {
+    height: 6rem;
+    padding: 1.5rem;
+    will-change: filter;
+    transition: filter 300ms;
+  }
+  .logo:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+  }
+  .logo.vanilla:hover {
+    filter: drop-shadow(0 0 2em #f7df1eaa);
+  }
+}
+
+/* ─── 4) Card component styling ─── */
+@layer components {
+  .card {
+    @apply bg-white dark:bg-gray-800 dark:text-white rounded-lg shadow-md;
+  }
+}
+
+/* ─── 5) Utility overrides ─── */
+.btn-primary {
+  @apply bg-[var(--color-primary)] text-[var(--color-light)] transition-all duration-200 ease-in-out;
+}
+.btn-primary:hover {
+  @apply bg-[var(--color-primary)/90];
+}
+.btn-secondary {
+  @apply bg-[var(--color-secondary)] text-[var(--color-dark)] transition-all duration-200 ease-in-out;
+}
+.btn-secondary:hover {
+  @apply bg-[var(--color-secondary)/90];
+}
