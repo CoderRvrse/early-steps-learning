@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <!-- 1️⃣ Font Awesome (free CDN) -->
-  <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-/>
+    <link rel="icon" href="data:," />
 
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     
     <meta charset="UTF-8" />
     <meta 
@@ -17,6 +18,9 @@
     <meta name="description" content="Professional, research‑backed in‑home early childhood education for ages 0–8 in New Mexico." />
   </head>
   <body class="font-body text-dark bg-white flex flex-col min-h-screen">
+    <!-- React root div -->
+    <div id="root"></div>
+    
     <!-- HEADER -->
     <header class="sticky top-0 z-50 bg-white shadow-sm">
       <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
@@ -69,7 +73,7 @@
               <div class="bg-gradient-to-r from-primary/65 to-secondary/65 w-120 h-12 md:w-full md:h-40"></div>
             </div>
             <p class="relative text-gray-800 text-lg md:text-xl font-medium leading-relaxed px-6 py-4 md:px-10 md:py-6 drop-shadow-sm max-w-xl text-center">
-              “Building bright futures stacking blocks, turning pages, and lighting up every little mind with Early Steps Learning at home.”
+              "Building bright futures stacking blocks, turning pages, and lighting up every little mind with Early Steps Learning at home."
             </p>
           </div>
           <div class="flex space-x-4">
@@ -89,8 +93,7 @@
       </div>
     </section>
 
-    <!-- (…rest of your sections: About, Services, Rates, Booking, Footer…) -->
-     <!-- ABOUT -->
+    <!-- ABOUT -->
   <section id="about" class="py-16 bg-white">
     <div class="max-w-6xl mx-auto px-4 text-center">
       <h2 class="font-heading font-bold text-3xl text-primary mb-2">About Early Steps Learning</h2>
@@ -102,7 +105,7 @@
         <div>
           <h3 class="font-heading font-bold text-2xl text-primary mb-2">Our Mission</h3>
           <p class="text-gray-700">
-            At Early Steps Learning, LLC, we believe the early years are the most critical for brain development. Our mission is to provide research-backed, developmentally appropriate learning experiences that nurture each child’s unique potential in the comfort of their own home.
+            At Early Steps Learning, LLC, we believe the early years are the most critical for brain development. Our mission is to provide research-backed, developmentally appropriate learning experiences that nurture each child's unique potential in the comfort of their own home.
           </p>
         </div>
         <div class="md:w-1/2 flex flex-col items-center">
@@ -124,7 +127,7 @@
               <span class="inline-flex items-center justify-center h-6 w-6 bg-secondary text-white rounded-full mr-2">
                 <i class="fas fa-check fa-xs"></i>
               </span>
-              Flexible scheduling around your family’s routine
+              Flexible scheduling around your family's routine
             </li>
             <li class="flex items-start">
               <span class="inline-flex items-center justify-center h-6 w-6 bg-secondary text-white rounded-full mr-2">
@@ -305,7 +308,7 @@
               <div class="flex-shrink-0 h-6 w-6 rounded-full bg-white text-primary flex items-center justify-center mr-3 mt-1">
                 <i class="fas fa-check text-xs"></i>
               </div>
-              Initial assessment of your child’s needs
+              Initial assessment of your child's needs
             </li>
             <li class="flex items-start">
               <div class="flex-shrink-0 h-6 w-6 rounded-full bg-white text-primary flex items-center justify-center mr-3 mt-1">
@@ -323,7 +326,7 @@
           <div class="bg-white bg-opacity-20 p-4 rounded-lg">
             <h4 class="font-medium mb-2">Before Your First Session:</h4>
             <p class="text-sm">
-              Please have your child’s immunization records available and be prepared to discuss any special needs or learning goals.
+              Please have your child's immunization records available and be prepared to discuss any special needs or learning goals.
             </p>
           </div>
           <div class="mt-6 flex justify-center">
@@ -337,7 +340,7 @@
 
           <!-- Success & Error Messages -->
           <div id="booking-success" class="hidden mb-4 p-4 text-green-800 bg-green-100 rounded">
-            ✅ Thanks! We’ve received your booking request. We’ll be in touch shortly.
+            ✅ Thanks! We've received your booking request. We'll be in touch shortly.
           </div>
           <div id="booking-error" class="hidden mb-4 p-4 text-red-800 bg-red-100 rounded">
             ⚠️ Oops! Something went wrong. Please try again in a moment.
@@ -375,7 +378,7 @@
               >
             </div>
             <div>
-              <label for="childAge" class="block text-sm font-medium text-gray-700 mb-1">Child’s Age</label>
+              <label for="childAge" class="block text-sm font-medium text-gray-700 mb-1">Child's Age</label>
               <select
                 id="childAge"
                 name="childAge"
@@ -510,7 +513,7 @@
               <p class="text-sm text-gray-400 italic">Nurturing young minds, one step at a time.</p>
             </div>
           </div>
-          <p class="mt-4 mb-8 text-secondary text-lg italic leading-relaxed max-w-lg">“Social Links”</p>
+          <p class="mt-4 mb-8 text-secondary text-lg italic leading-relaxed max-w-lg">"Social Links"</p>
           <div class="flex space-x-4 mt-4">
             <a href="https://www.facebook.com/profile.php?id=61577979215598" target="_blank" rel="noopener" class="text-gray-300 hover:text-white transition" aria-label="Facebook">
               <i class="fab fa-facebook-f text-xl"></i>
@@ -569,6 +572,8 @@
   <button id="back-to-top" class="fixed bottom-6 right-6 bg-primary text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300">
     <i class="fas fa-arrow-up"></i>
   </button>
+
+  <!-- Scripts -->
   <script type="module">
     // 1) Pull in the URL from your .env
     const BOOKING_ENDPOINT = import.meta.env.VITE_BOOKING_ENDPOINT;
@@ -577,22 +582,26 @@
     window.addEventListener('DOMContentLoaded', () => {
       const mobileBtn  = document.getElementById('mobile-menu-button');
       const mobileMenu = document.getElementById('mobile-menu');
-      mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+      if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+      }
 
       const backBtn = document.getElementById('back-to-top');
-      window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-          backBtn.classList.replace('opacity-0','opacity-100');
-          backBtn.classList.replace('invisible','visible');
-        } else {
-          backBtn.classList.replace('opacity-100','opacity-0');
-          backBtn.classList.replace('visible','invisible');
-        }
-      });
-      backBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      if (backBtn) {
+        window.addEventListener('scroll', () => {
+          if (window.pageYOffset > 300) {
+            backBtn.classList.replace('opacity-0','opacity-100');
+            backBtn.classList.replace('invisible','visible');
+          } else {
+            backBtn.classList.replace('opacity-100','opacity-0');
+            backBtn.classList.replace('visible','invisible');
+          }
+        });
+        backBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      }
     });
 
-    // 3) Booking form logic
+    // 3) Booking form logic - This is the CORRECT version that sends to your backend
     (function() {
       const form       = document.getElementById('booking-form');
       const submitBtn  = form?.querySelector('button[type=submit]');
@@ -619,7 +628,7 @@
             !form.elements['email'].value.trim() ||
             !form.elements['childAge'].value) {
           show(errorBox);
-          errorBox.textContent = '⚠️ Please fill out Name, Email & Child’s Age.';
+          errorBox.textContent = '⚠️ Please fill out Name, Email & Child\'s Age.';
           return;
         }
 
@@ -658,7 +667,6 @@
     })();
   </script>
 
-
-    <script type="module" src="/src/main.js"></script>
+  <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

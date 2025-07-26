@@ -1,21 +1,22 @@
+// File: early-steps-ui-fresh/tailwind.config.js
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    './index.html',
-    './src/**/*.{js,jsx,ts,tsx,html}'
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
       colors: {
-        primary: '#0077CC',
-        secondary: '#FFB400',
-        dark: '#333333'
+        primary: '#4A90E2',    // Blue
+        secondary: '#F5A623',  // Orange
+        dark: '#333333',       // Dark gray
       },
       fontFamily: {
-        heading: ['Poppins', 'sans-serif'],
-        body: ['Open Sans', 'sans-serif']
-      }
-    }
+        'heading': ['Arial', 'sans-serif'],
+        'body': ['Arial', 'sans-serif'],
+      },
+    },
   },
-  plugins: []
-};
+  plugins: [],
+}
