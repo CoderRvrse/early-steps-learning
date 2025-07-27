@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/', // For custom domain
+  base: './', // Changed from '/' to './' for relative paths
   server: {
     port: 5173,
     proxy: {
@@ -16,7 +16,7 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',
-    sourcemap: false, // Disable for production
+    sourcemap: false,
     rollupOptions: {
       output: {
         manualChunks: {
